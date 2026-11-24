@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كافيه الصباح</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0b1d3a;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  .page {
+    width: 100%;
+    max-width: 620px;
+    min-height: 100vh;
+    padding-bottom: 30px;
+    /* خلفية زرقا بخطوط خشب */
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, transparent 2px 90px),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0 1px, transparent 1px 7px),
+      linear-gradient(#1c3f7a, #14305e);
+  }
+  .header {
+    position: relative;
+    direction: ltr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2e24a;
+    color: #14305e;
+    padding: 14px 28px;
+    font-size: 26px;
+    font-weight: 800;
+  }
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    transform: translateX(-50%);
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #14305e;
+    border: 4px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1.25;
+    text-align: center;
+    color: #fff;
+  }
+  .logo span { font-size: 22px; }
+  .menu { margin-top: 56px; padding: 0 28px; }
+  .row {
+    direction: ltr;
+    display: grid;
+    grid-template-columns: 1fr 72px 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 11px 0;
+    font-size: 17px;
+  }
+  .en { text-align: left; }
+  .price { text-align: center; font-weight: 700; }
+  .ar { text-align: right; direction: rtl; font-weight: 600; }
+  .title {
+    direction: ltr;
+    display: flex;
+    justify-content: space-between;
+    margin: 28px 0 6px;
+    padding: 10px 0;
+    border-top: 2px solid #f2e24a;
+    border-bottom: 2px solid #f2e24a;
+    color: #f2e24a;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .photos { display: flex; justify-content: center; margin-top: 30px; }
+  .photos img {
+    width: 70%;
+    max-width: 300px;
+    border-radius: 16px;
+    border: 4px solid rgba(255,255,255,.85);
+  }
+  .contact { text-align: center; margin-top: 24px; }
+  .contact a { color: #f2e24a; font-weight: bold; }
+  @media (max-width: 480px) {
+    .row { font-size: 15px; grid-template-columns: 1fr 62px 1fr; }
+    .header { font-size: 22px; padding: 12px 18px; }
+    .menu { padding: 0 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>Drinks</div>
+    <div class="logo"><span>☕</span>الصباح<br>CAFE</div>
+    <div>المشروبات</div>
+  </div>
+
+  <div class="menu">
+    <div class="row"><div class="en">Turkish Coffee</div><div class="price">30 LE</div><div class="ar">قهوة تركي</div></div>
+    <div class="row"><div class="en">Cappuccino</div><div class="price">45 LE</div><div class="ar">كابتشينو</div></div>
+    <div class="row"><div class="en">Tea</div><div class="price">15 LE</div><div class="ar">شاي</div></div>
+    <div class="row"><div class="en">Latte</div><div class="price">45 LE</div><div class="ar">لاتيه</div></div>
+    <div class="row"><div class="en">Mocha</div><div class="price">45 LE</div><div class="ar">موكا</div></div>
+    <div class="row"><div class="en">Hot Chocolate</div><div class="price">50 LE</div><div class="ar">هوت شوكلت</div></div>
+    <div class="row"><div class="en">Hot Cider</div><div class="price">40 LE</div><div class="ar">هوت سيدر</div></div>
+
+    <div class="title"><div>Desserts</div><div>الحلويات</div></div>
+
+    <div class="row"><div class="en">Chocolate Cake</div><div class="price">50 LE</div><div class="ar">كيكة شوكولاتة</div></div>
+    <div class="row"><div class="en">Cookies</div><div class="price">25 LE</div><div class="ar">كوكيز</div></div>
+    <div class="row"><div class="en">Cheesecake</div><div class="price">40 LE</div><div class="ar">تشيز كيك</div></div>
+    <div class="row"><div class="en">Molten Cake</div><div class="price">45 LE</div><div class="ar">مولتن كيك</div></div>
+
+    <div class="photos">
+      <img src="coffee.jpg" alt="قهوة" onerror="this.style.display='none'">
+    </div>
+
+    <div class="contact"><a href="contact.html">اتصل بنا</a></div>
+  </div>
+
+</div>
+</body>
+</html>
