@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كافيه الصباح | المنيو</title>
+<meta name="description" content="منيو كافيه الصباح: مشروبات وحلويات، والعنوان وطرق التواصل.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232b1a10'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #150b05;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+  }
+  .page {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    padding: 36px 20px 30px;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, transparent 2px 90px),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.08) 0 1px, transparent 1px 7px),
+      linear-gradient(#4a2e1c, #2b1a10);
+  }
+
+  /* الهيدر: لوجو + اسم + جملة */
+  .profile { text-align: center; }
+  .logo {
+    width: 104px; height: 104px; margin: 0 auto 14px;
+    border-radius: 50%; background: #2b1a10; border: 4px solid #e6c36a;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 12px; line-height: 1.3; color: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,.5), 0 5px 10px rgba(0,0,0,.35);
+  }
+  .logo span { font-size: 34px; }
+  h1 { font-size: 26px; font-weight: 800; }
+  .tagline { color: #e3d3bf; margin-top: 6px; font-size: 15px; }
+
+  /* أيقونات السوشيال */
+  .socials { display: flex; justify-content: center; gap: 14px; margin: 20px 0 6px; }
+  .socials a {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center;
+    transition: .25s; box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  .socials a:hover { background: #e6c36a; color: #2b1a10; transform: translateY(-3px); }
+  .socials svg { width: 22px; height: 22px; }
+
+  /* عناوين الأقسام */
+  .section-title {
+    text-align: center; color: #e6c36a; font-weight: 800; font-size: 15px;
+    letter-spacing: .5px; margin: 28px 0 12px;
+  }
+
+  /* أزرار المنيو (بتفتح وتقفل) */
+  details {
+    background: rgba(255,255,255,.10); border-radius: 16px; margin-bottom: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.35); overflow: hidden;
+  }
+  summary {
+    list-style: none; cursor: pointer; padding: 17px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 18px; font-weight: 800; transition: background .25s;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover { background: rgba(255,255,255,.08); }
+  summary .arrow { transition: transform .3s; color: #e6c36a; font-size: 14px; }
+  details[open] summary .arrow { transform: rotate(180deg); }
+  details[open] summary { border-bottom: 1px solid rgba(230,195,106,.35); }
+  .items { padding: 6px 20px 14px; }
+  .row {
+    direction: ltr; display: grid; grid-template-columns: 1fr 66px 1fr; gap: 10px;
+    align-items: center; padding: 11px 0; font-size: 16px;
+    border-bottom: 1px dashed rgba(255,255,255,.12);
+  }
+  .row:last-child { border-bottom: none; }
+  .en { text-align: left; }
+  .price { text-align: center; font-weight: 700; color: #e6c36a; }
+  .ar { text-align: right; direction: rtl; font-weight: 600; }
+
+  /* الصور */
+  .photos { display: flex; justify-content: center; gap: 12px; }
+  .photos img {
+    width: 47%; max-width: 230px; border-radius: 16px; border: none;
+    box-shadow: 0 14px 28px rgba(0,0,0,.55), 0 5px 10px rgba(0,0,0,.4);
+    transition: transform .25s;
+  }
+  .photos img:hover { transform: translateY(-6px) scale(1.03); }
+
+  /* مكاننا */
+  .find {
+    background: rgba(255,255,255,.10); border-radius: 16px; padding: 20px; text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,.35);
+  }
+  .find .addr { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .find .hours { color: #e3d3bf; font-size: 14px; margin-bottom: 16px; }
+  .btn {
+    display: inline-block; padding: 13px 28px; border-radius: 30px; font-weight: 800; font-size: 15px;
+    background: #e6c36a; color: #2b1a10; transition: .25s; box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  }
+  .btn:hover { transform: translateY(-3px); background: #f3d98a; }
+
+  a { color: inherit; text-decoration: none; }
+  footer { text-align: center; margin-top: 30px; color: #b8a48e; font-size: 13px; }
+  footer a { color: #e6c36a; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 1) الهيدر -->
+  <div class="profile">
+    <div class="logo"><span>☕</span>الصباح<br>CAFE</div>
+    <h1>كافيه الصباح</h1>
+    <div class="tagline" id="tagline"></div>
+    <div class="socials" id="socials"></div>
+  </div>
+
+  <!-- 2) المنيو -->
+  <div class="section-title">منيو الكافيه</div>
+
+  <details>
+    <summary><span>المشروبات · Drinks</span><span class="arrow">▼</span></summary>
+    <div class="items">
+      <div class="row"><div class="en">Turkish Coffee</div><div class="price">30 LE</div><div class="ar">قهوة تركي</div></div>
+      <div class="row"><div class="en">Cappuccino</div><div class="price">45 LE</div><div class="ar">كابتشينو</div></div>
+      <div class="row"><div class="en">Tea</div><div class="price">15 LE</div><div class="ar">شاي</div></div>
+      <div class="row"><div class="en">Latte</div><div class="price">45 LE</div><div class="ar">لاتيه</div></div>
+      <div class="row"><div class="en">Mocha</div><div class="price">45 LE</div><div class="ar">موكا</div></div>
+      <div class="row"><div class="en">Hot Chocolate</div><div class="price">50 LE</div><div class="ar">هوت شوكلت</div></div>
+      <div class="row"><div class="en">Hot Cider</div><div class="price">40 LE</div><div class="ar">هوت سيدر</div></div>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>الحلويات · Desserts</span><span class="arrow">▼</span></summary>
+    <div class="items">
+      <div class="row"><div class="en">Chocolate Cake</div><div class="price">50 LE</div><div class="ar">كيكة شوكولاتة</div></div>
+      <div class="row"><div class="en">Cookies</div><div class="price">25 LE</div><div class="ar">كوكيز</div></div>
+      <div class="row"><div class="en">Cheesecake</div><div class="price">40 LE</div><div class="ar">تشيز كيك</div></div>
+      <div class="row"><div class="en">Molten Cake</div><div class="price">45 LE</div><div class="ar">مولتن كيك</div></div>
+    </div>
+  </details>
+
+  <!-- 3) الصور -->
+  <div class="section-title">لقطات من الكافيه</div>
+  <div class="photos">
+    <img src="coffee.jpg" alt="قهوة" onerror="this.style.display='none'">
+    <img src="coffee2.jpg" alt="قهوة" onerror="this.style.display='none'">
+  </div>
+
+  <!-- 4) مكاننا -->
+  <div class="section-title">مكاننا</div>
+  <div class="find">
+    <div class="addr" id="addr"></div>
+    <div class="hours" id="hours"></div>
+    <a class="btn" id="map" href="#" target="_blank">افتح على الخريطة</a>
+  </div>
+
+  <footer>تصميم: <a href="https://yousefragab0.github.io" target="_blank">yousefragab</a></footer>
+
+</div>
+
+<script>
+  // ===== بيانات الكافيه: غيّرها كلها من هنا =====
+  const TAGLINE = "قهوة على أصولها، وقعدة تريّح";
+  const ADDRESS = "مدينة نصر، القاهرة - شارع الجمهورية";   // غيّره بعنوان الكافيه الحقيقي
+  const HOURS = "كل يوم من 8 صباحاً حتى 12 منتصف الليل";     // غيّره بمواعيدهم الحقيقية
+  const WHATSAPP_NUMBER = "201000000000";   // بالصيغة الدولية من غير + ولا صفر أول
+  const INSTAGRAM = "";   // لينك الانستجرام (سيبه فاضي لو مفيش)
+  const FACEBOOK = "";    // لينك الفيسبوك (سيبه فاضي لو مفيش)
+
+  // ===== بقية الكود (متلمسهوش) =====
+  document.getElementById("tagline").innerText = TAGLINE;
+  document.getElementById("addr").innerText = ADDRESS;
+  document.getElementById("hours").innerText = HOURS;
+  document.getElementById("map").href =
+    "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
+
+  const icons = {
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+    fb: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>'
+  };
+  let html = "";
+  if (INSTAGRAM) html += '<a href="' + INSTAGRAM + '" target="_blank" title="انستجرام">' + icons.ig + '</a>';
+  if (FACEBOOK) html += '<a href="' + FACEBOOK + '" target="_blank" title="فيسبوك">' + icons.fb + '</a>';
+  if (WHATSAPP_NUMBER) html += '<a href="https://wa.me/' + WHATSAPP_NUMBER + '" target="_blank" title="واتساب">' + icons.wa + '</a>';
+  document.getElementById("socials").innerHTML = html;
+</script>
+
+</body>
+</html>
